@@ -1,0 +1,48 @@
+<h1>Members</h1>
+  <table class="list">
+   <% @users.each do |user| %>
+    <tr>
+      <td class="listAvatar" rowspan="2"><%= image_tag user.photo.url(:detail) %></td>
+      <td class="listName"><b><%= link_to user.full_name, member_path(user) %></b></td>
+    <tr>
+      <td class="listEnd">
+      <!-- мутня -->
+        <% if user.id == current_user.id %>
+          This is you
+        <% else %>  
+           <% @@note1 = nil %><% @@note2 = nil %><% @@note3 = nil %>
+        <!-- @newfriends -->
+          <% @newfriends.each do |newfriend| %>
+            <!-- You have applied -->
+            <% if user.id == newfriend.user_id && current_user.id == newfriend.friend_id %>
+              You have applied
+              <% @@note1=3 %>
+            <% end %>
+            <!-- Application to friends -->
+            <% if user.id == newfriend.friend_id && current_user.id == newfriend.user_id  %>
+              <%= link_to "add", newfriend_index_path(newfriend), method: :post %> |
+              <%= link_to "delete", newfriend_path(newfriend), method: :delete %>
+              <% @@note2=3 %>
+            <% end %>
+          <% end %>
+        <!-- end @newfriends -->  
+        <!-- @friends -->
+          <% @friends.each do |friend| %>
+            <!-- This you friend -->
+            <% if user.id == friend.user_id && current_user.id == friend.friend_id %>
+              This you friend
+              <% @@note3=3 %>
+            <% end %>
+          <% end %>
+        <!-- end @friends -->
+        <!-- add -->
+              <% if @@note1 == nil && @@note2 == nil && @@note3 == nil %>
+                <%= link_to "add", member_index_path(user), method: :post %>
+               <% end %> 
+        <!-- end add --> 
+        <% end %> 
+      <!-- кінець мутні -->
+      </td>
+      <% end %>      
+
+  </table>

@@ -1,0 +1,40 @@
+<div class="memberHead">  
+  <div class="memberAvatar">
+    <% if @user.photo_file_name==nil %>
+      <img src="/photo/small/1k.jpg">
+    <% else %>
+      <%= image_tag @user.photo.url(:small) %>
+    <% end %>
+
+  </div>
+
+  <div class="memberName">
+   <p><b>
+    <%= @user.full_name %>
+   </b></p>
+   <p>
+    Home: <%= @user.country %>, <%= @user.locality %>
+   </p>
+ 
+   <p>
+    Email: <%= @user.email %>
+   </p>
+   <p>
+    <% if @user.id!=current_user.id %>
+      <%= link_to "Friends", friend_path(@user), method: :get %>
+    <% end %>
+   <p>
+  </div>
+</div>
+
+  <div class="memberComment">
+  <p>
+    <h2>Comments</h2>
+  <%= render @user.post %>
+
+ <% if current_user %>
+  <h2>Add a comment:</h2>
+   <%= render "posts/form" %>
+  <% end %>
+  </p>
+</div>

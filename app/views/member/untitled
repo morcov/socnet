@@ -1,0 +1,41 @@
+<!-- мутня -->
+        <% if user.id == current_user.id %>
+          This is you
+        <% else %>  
+        <!-- @newfriends -->
+          <% @newfriends.each do |newfriend| %>
+            <!-- You have applied -->
+            <% if user.id == newfriend.user_id && current_user.id == newfriend.friend_id %>
+              You have applied
+            <% end %>
+            <!-- Application to friends -->
+            <% if user.id == newfriend.friend_id && current_user.id == newfriend.user_id  %>
+              <%= link_to "add", newfriend_index_path(user), method: :post %> | 
+              <%= link_to "delete", newfriend_path(user), method: :delete %>
+            <% end %>
+            <!-- flag add -->
+            <% if user.id != newfriend.user_id && current_user.id != newfriend.friend_id  %>
+              <% @@note1=3 %>
+            <% else %>
+              <% @@note1=nil %>
+            <% end %>
+          <% end %>
+        <!-- end @newfriends -->  
+        <!-- @friends -->
+          <% @friends.each do |friend| %>
+            <!-- This you friend -->
+            <% if user.id == friend.user_id && current_user.id == friend.friend_id %>
+              This you friend
+              <% @@note2=1 %>
+            <% else %>
+              <% @@note2=nil %>
+            <% end %>
+          <% end %>
+        <!-- end @friends -->
+        <!-- add -->
+             <% if @@note2==nil %>
+               <%= link_to "add", member_index_path(user), method: :post %>
+             <% end %> 
+        <!-- end add --> 
+        <% end %> 
+      <!-- кінець мутні -->

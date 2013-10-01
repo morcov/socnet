@@ -1,0 +1,43 @@
+<h1>Edit</h1>
+
+  <%= link_to "back", index_index_path %>
+
+<%= form_for @user, :html => { :multipart => true } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+   <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :locality %><br />
+    <%= f.text_field :locality %>
+  </p>
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+  <p class="button"><%= submit_tag "Next" %></p>
+<% end %>
+
+ <%= link_to "back", index_index_path %>

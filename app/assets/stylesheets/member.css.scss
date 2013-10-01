@@ -1,0 +1,35 @@
+// Place all the styles related to the Member controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+  div.memberHead
+ {
+ 	width: 100%;
+ 	min-height: 300px;
+ //	border: dotted 2px;
+    margin: 15px 0px 0px 0px;
+ }
+
+ div.memberAvatar
+ {
+    min-width: 200px;
+ 	min-height: 250px;
+
+ 	border: dotted 2px;
+ 	float: left;
+ }
+
+ div.memberName
+ {
+ 	width: 450px;
+ 	float: right;
+ 	border-bottom: 1px dotted #0000d0;
+ 	border-left: 1px dotted #0000d0;
+ 	padding: 0px 0px 0px 15px;
+ }
+
+ div.memberComment
+ {
+ 	width: 350px;
+ 	margin: 10px 0px 0px 20px;
+ }

@@ -1,0 +1,182 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+*
+{
+  //margin: 0;
+  //padding: 0;
+}
+
+/* body */
+ div.body
+ {
+ 	margin: 0 auto;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ 	width: 1000px;
+ }
+
+ a
+ {
+ 	text-decoration: none;
+ }
+ a:link
+ {
+    color: #0000d0; /* Цвет ссылок */
+ }
+ a:visited
+ {
+    color: #0000d0; /* Цвет посещенных ссылок */
+ }
+ a:active
+ {
+    color: red; /* Цвет активной ссылки */ 
+ } 
+
+/* head */
+ div.head
+ {
+  width: 100%;
+  height: 60px;
+  border: solid 2px;
+  border-color: #0000d0;
+  border-radius: 8px;
+ }
+
+ div.headMenu
+ {
+  float: right;
+  width: 180px;
+  height: 20px;
+  //border: solid 2px;
+  padding: 20px 25px 0px 0px;
+  text-align: right;
+ }
+
+ div.headMenu a:active
+ {
+    color: red; /* Цвет активной ссылки */ 
+ } 
+
+ div.headName
+ {
+  float: left;
+  padding: 10px 0px 0px 25px;
+  font-size: 30px;
+ }
+
+ div.headName a:link
+ {
+    color: black; /* Цвет ссылок */
+ }
+ div.headName a:visited
+ {
+    color: black; /* Цвет ссылок */
+ }
+ div.headName a:active
+ {
+    color: black; /* Цвет ссылок */
+ }
+
+
+ /* main */
+  div.main
+ {
+ 	width: 750px;
+ 	border: dotted 1px;
+ 	border-color: #0000d0;
+ 	float: right;
+ 	padding: 10px 30px 10px 30px;
+ 	margin: 10px 0px 0px 0px;
+ }
+
+ /* menu */
+ div.menu
+ {
+ 	width: 160px;
+ 	//border: dotted;
+    float: left;
+    padding: 15px 0px 0px 10px;
+ }
+
+ td.menuTd:hover
+ {
+   background: #B9D3EE; 
+ } 
+
+ td.menuTdC
+ {
+    font-size: 12px;
+ }
+
+ td.menuTdC a:visited
+ {
+    color: gray; /* Цвет посещенных ссылок */
+ }
+ td.menuTdC a:active
+ {
+    color: gray; /* Цвет активной ссылки */ 
+ } 
+
+ td.menuTdC:hover
+ {
+   background: #B9D3EE; 
+ } 
+
+ table.menuTable
+ {
+   width: 100%;
+ }
+
+ table.menuTable a
+ {
+   display: block;
+ }
+
+
+
+/* table list */
+table.list
+{
+  width: 500px;
+  padding: 0px 0px 0px 0px;
+}
+
+ table.list a:hover
+ {
+ 	text-decoration: underline;
+ }
+
+ td.listAvatar
+ {
+   width: 100px;
+   height: 100px;
+ }
+
+ td.listName
+ {
+   vertical-align: top;
+   padding-top: 10px;
+   height: 25px;
+ }
+
+ td.listEnd
+ {
+   vertical-align: top;
+   color: gray;
+   font-size: 14px;
+   border-bottom: 1px dotted #0000d0;
+ }
+
+
+

@@ -1,0 +1,12 @@
+<h1><%= @user.first_name %> Friends</h1>
+  <table class="list">
+   <% @friends.each do |friend| %>
+    <tr>
+      <td class="listAvatar" rowspan="2"><%= image_tag friend.photo.url(:detail) %></td>
+      <td class="listName"><b><%= link_to friend.full_name, member_path(friend.friend_id) %></b></td>
+    
+    <tr>
+      <td class="listEnd">
+      </td>    
+   <% end %>
+  </table>

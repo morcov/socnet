@@ -1,0 +1,14 @@
+<p>
+	<b><%= post.author %>:</b>
+    <%= post.post %>
+  <% if current_user.id == post.user_id || current_user.id == post.author_id %>
+    <%= link_to 'x', [post.user, post],
+               method: :delete %>
+   <% end %>
+</p>
+<p>
+  <%= render post.comment %>
+
+ <% if current_user %>
+ <% end %>
+  </p>

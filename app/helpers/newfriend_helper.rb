@@ -1,0 +1,2 @@
+module NewfriendHelper
+end
