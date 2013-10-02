@@ -1,6 +1,6 @@
 <div class="message">
   <b><%= message.full_name %></b>
-    <div class="created_at"><%= message.created_at.strftime("%B %d, %Y") %></div>
+    <div class="created_at"><%= message.created_at.strftime("%B %d, %Y, %H:%S") %></div>
     <div class="content">
       <%= simple_format(message.content) %>
     </div>
