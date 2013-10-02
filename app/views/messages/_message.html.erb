@@ -1,12 +1,16 @@
 <div class="message">
+  <b><%= message.full_name %></b>
     <div class="created_at"><%= message.created_at.strftime("%B %d, %Y") %></div>
     <div class="content">
       <%= simple_format(message.content) %>
     </div>
     <div class="actions">
       <% if message.ancestry==nil %>
-      <%= link_to "Reply", new_message_path(:parent_id => message) %> | <% end %>
-      <%= link_to "Destroy", message, :confirm => "Are you sure?", :method => :delete %>
+        <%= link_to "Reply", new_message_path(:parent_id => message) %> 
+      <% end %>
+      <% if current_user.id==message.user_id || current_user.id==message.author_id %>
+        <%= link_to "Destroy", message, :confirm => "Are you sure?", :method => :delete %>
+      <% end %>
     </div>
   </div>
     <br>

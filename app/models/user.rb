@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #has_many :message
+  has_many :message
   has_many :friend
   has_many :newfriend
 
