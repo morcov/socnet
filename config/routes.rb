@@ -2,11 +2,9 @@ Socnet::Application.routes.draw do
 
   resources :photo
 
-  resources :users do
-    resources :posts do
-      resources :comments
-    end
-  end
+  resources :users
+  resources :messages
+
   get "sign_up" => "users#new", :as => "sign_up"
   get "show" => "users#show", :as => "show"
 

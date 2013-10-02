@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923152801) do
+ActiveRecord::Schema.define(version: 20131001171412) do
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20130923152801) do
 
   add_index "friends", ["user_id"], name: "index_friends_on_user_id", using: :btree
 
+  create_table "messages", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "author_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ancestry"
+  end
+
+  add_index "messages", ["ancestry"], name: "index_messages_on_ancestry", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id_id", using: :btree
+
   create_table "newfriends", force: true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
@@ -47,8 +59,10 @@ ActiveRecord::Schema.define(version: 20130923152801) do
     t.string   "post"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
 
+  add_index "posts", ["ancestry"], name: "index_posts_on_ancestry", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
